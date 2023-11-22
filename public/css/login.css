@@ -1,0 +1,210 @@
+/* ========================================== 
+1. Reset CSS
+2. Estilos globais
+3. Estilos
+- 3.1  Estilos do cabeçalho
+- 3.2  Estilo para links e botões 
+- 3.3  Estilos do formulário
+- 3.4  Estilos para o fieldset e rótulos dos campos
+- 3.5  Estilos para os campos de entrada
+- 3.6  Estilo para botões
+4. Página Login
+5. Responsiviade
+
+*/
+
+/* ====================================== 
+    1.  Reset CSS          
+   ======================================  */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+/* ====================================== 
+    2.  Estilos globais        
+   ======================================  */
+  html, body {
+    font-family: sans-serif;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: #222831;
+  }
+  
+  .content {
+    margin: 0.5% 1.5%;
+  }
+
+  /* ====================================== 
+    3.  Estilos        
+   ======================================  */
+  
+  /* Estilos do cabeçalho */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5% 1.5%;
+    border-bottom: 3px solid rgb(255, 0, 0);
+    height: 100%;
+  }
+  
+  /* Estilo para links e botões */
+  a, button {
+    text-align: center;
+    color: rgb(148, 0, 0);
+  }
+  
+  .image-clickable {
+    margin-right: auto;
+  }
+  
+  .logo {
+    height: 4.2rem;
+    padding: 7px;
+  }
+  
+  .nav-links {
+    list-style: none;
+  }
+  
+  .nav-links li {
+    display: inline-block;
+    padding: 0 1.25rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    transition: all 0.5s ease 0s;
+  }
+  
+  .nav-links li a:hover {
+    color: rgb(255, 0, 0);
+  }
+  
+  /* Estilos do formulário */
+  form {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  form a {
+    display: block;
+    text-align: center;
+    color: #ff0000;
+    text-decoration: none;
+  }
+  
+  form a:hover {
+    transition: all 0.5s ease 0s;
+    color: #f30000;
+  }
+  
+  /* Estilos para o fieldset e rótulos dos campos */
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  /* Estilos para os campos de entrada */
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para botões */
+  button {
+    background: #ffffff;
+    cursor: pointer;
+    padding: 9px 20px;
+    border: 1px red solid;
+    border-radius: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    transition: all 0.5s ease 0s;
+    margin-left: 20px;
+  }
+  
+  button:hover {
+    background: rgba(255, 0, 0, 0.781);
+    border: 1px rgb(255, 255, 255) solid;
+  }
+  
+  /* Estilos para links e botões no hover */
+  a, button:hover {
+    color: white;
+  }
+ 
+  /* ====================================== 
+    4.  Página - Login        
+   ======================================  */
+
+.login {
+    background: url(../assets/img/backgroundcadastro.png) no-repeat center center/cover;
+}
+
+.banner-login {
+    color: white;
+    height: 100vh;
+    background: url("../assets/img/backgroundcadastro.png") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-login .card {
+    background-color: #2c343f;
+    width: 450px;
+    max-width: 90%;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px 5px #000000;
+  }
+
+.banner-login a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner-login #div_erros_login {
+    margin-top: 15px;
+}
+
+  .loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+  }
+
+  /* ====================================== 
+    5. Responsividade     
+   ======================================  */
+
+  @media screen and (max-width: 600px) {
+    .banner-login .card {
+      width: 90%;
+    }
+  }
+  

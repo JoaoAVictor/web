@@ -1,0 +1,28 @@
+<!-- detalhes.html -->
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RPGMatch - Home</title>
+        <link rel="stylesheet" href="css/detalhes.css">
+    </head>
+<body>
+    <div class="detalhes-container">
+        <div id="detalhes-banner" class="detalhes-banner"></div> <!-- Adicione esta linha -->
+        <h2 id="detalhes-titulo" style="color: red;"></h2>
+        <div id="detalhes-conteudo"></div>
+        <div id="comentários-container">
+            <h3>Comentarios</h3>
+            <ul id="lista-comentarios"></ul>
+            <form id="form-comentario">
+                <label for="texto-comentario">Comentar:</label>
+                <textarea id="texto-comentario" name="texto" rows="4" required></textarea>
+                <button type="submit">Publicar Comentário</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="./assets/js/detalhes.js"></script>
+</body>
+</html>

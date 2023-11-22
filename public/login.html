@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPGMatch - Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body class="login">
+    <div class="banner-login">
+        <div class="container">
+            <div class="card medio">
+                <a href="index.html">
+                    <img src="./assets/img/Logo.png" alt="main-logo" class="logo">
+                </a>
+                <h2>Enfim você chegou!</h2>
+                <div class="formulario">
+                    <!-- Adicione o evento onsubmit ao formulário -->
+                    <form id="form_login" onsubmit="return entrar()">
+                        <label for="email">E-mail:</label>
+                        <input id="email" name="email" type="text" placeholder="Login" required>
+                        <br>
+                        <label for="senha">Senha:</label>
+                        <input id="senha" name="senha" type="password" placeholder="******" required>
+                        <br>
+                        <!-- Altere o tipo de botão para "submit" -->
+                        <button class="btn" type="submit">Entrar</button>
+                        <br><br>
+                        <div id="div_aguardar" class="loading-div" style="display: none;">
+                            <img src="./assets/img/circle-loading.gif" id="loading-gif" alt="loading-gif">
+                        </div>
+                        <b>Ainda não possui cadastro?</b> <a href='cadastro.html'>Registre-se!</a>
+                    </form>
+                </div>
+                <div id="div_erros_login"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/login.js"></script>
+</body>
+
+</html>

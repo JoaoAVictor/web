@@ -1,0 +1,61 @@
+ /* formatação */
+
+ .centralizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+   .artigo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0.5% 1.5%;
+    width: 50%;
+    padding: 5%;
+    text-align: justify;
+  }
+
+    /* Banners */ 
+.banner-artigo {
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin: 0.5% 1.5%;
+  }
+  
+  .banner-artigo .container {
+    height: 500px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .banner-artigo p {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    width: 280px;
+    font-size: 30px;
+    margin-left: 350px;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  
+  .banner-artigo span {
+    font-weight: 800;
+  }
+  
+ Banners Específicos 
+  .artigo1 {
+    background-image: url(https://i.pinimg.com/originals/b7/9f/9b/b79f9b27f5bd33fae89f352b6dfb06a5.gif);
+  }
+  
+  .artigo2 {
+    background-image: url(https://i.pinimg.com/originals/b1/6c/ab/b16cab79f718da02916e4ce17fb16961.gif);
+  }
+  
+  .artigo3 {
+    background-image: url(./assets/img/master.gif);
+  }
