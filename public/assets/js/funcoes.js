@@ -1,3 +1,9 @@
+document.getElementById('sairBtn').addEventListener('click', function (event) {
+
+    console.log("event listener")
+    limparSessao();
+});
+
 function validarSessao() {
     aguardar();
 
@@ -16,11 +22,11 @@ function validarSessao() {
     }
 }
 
-function sair() {
-    aguardar();
+function limparSessao() {
+
+    console.log("oi eu entrei aqui")
     sessionStorage.clear();
-    finalizarAguardar();
-    window.location = "login.html";
+    window.location = "../login.html";
 }
 
 
@@ -37,6 +43,8 @@ function finalizarAguardar(texto) {
         divErrosLogin.innerHTML = texto;
     }
 }
+
+
 
 // // Modal
 // function mostrarModal() {
@@ -58,4 +66,4 @@ function finalizarAguardar(texto) {
 // // Função auxiliar para esconder um elemento
 // function esconderElemento(idElemento) {
 //     exibirElemento(idElemento, "none");
-// }
+// })

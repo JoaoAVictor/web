@@ -1,4 +1,3 @@
-// models/postagemModel.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/connection.js');
 
@@ -21,10 +20,10 @@ const Postagem = sequelize.define('Postagem', {
     allowNull: false,
   },
   imagem1: {
-    type: DataTypes.BLOB,
+    type: DataTypes.STRING(255),
   },
   banner: {
-    type: DataTypes.BLOB,
+    type: DataTypes.STRING(255),
   },
 });
 

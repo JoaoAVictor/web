@@ -1,4 +1,3 @@
-// controllers/postagemController.js
 const Postagem = require('../models/postagemModel');
 
 async function getPostagens(req, res) {
@@ -14,7 +13,9 @@ async function getPostagens(req, res) {
 async function criarPostagem(req, res) {
   try {
     const { titulo, descricao, post, imagem1, banner } = req.body;
+
     const postagem = await Postagem.create({ titulo, descricao, post, imagem1, banner });
+
     res.status(201).json(postagem);
   } catch (error) {
     console.error('Erro ao criar postagem:', error);

@@ -1,69 +1,50 @@
-function limparFormulario() {
-    document.getElementById("form_login").reset();
-}
+document.getElementById('form_login').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
 
-function validarEmail(email) {
-    return email.includes("@") && email.includes(".com");
-}
+    document.getElementById('div_aguardar').style.display = 'block';
 
-function aguardar() {
-    document.getElementById("div_aguardar").style.display = "block";
-}
+    const dados = {
+        email: email,
+        senha: senha
+    };
+
+    fetch('/api/usuarios/autenticar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.erros) {
+            document.getElementById('div_erros_login').innerHTML = data.erros.join('<br>');
+        } else {
+
+
+            sessionStorage.setItem('EMAIL_USUARIO', data.email);
+            sessionStorage.setItem('NOME_USUARIO', data.nome);
+            sessionStorage.setItem('ID_USUARIO', data.id);
+
+            setTimeout(function () {
+                window.location.href = '/dashboard';
+            }, 1500);
+        }
+    })
+    .catch(error => {
+        document.getElementById('div_aguardar').style.display = 'none';
+
+        console.error('Erro na solicitação:', error);
+    })
+    .finally(function () {
+        finalizarAguardar();
+    });
+
+});
 
 function finalizarAguardar() {
-    document.getElementById("div_aguardar").style.display = "none";
-}
-
-function mostrarErro(mensagem) {
-    document.getElementById("div_erros_login").innerText = mensagem;
-}
-
-function entrar() {
-    aguardar();
-
-    var formulario = new FormData(document.getElementById("form_login"));
-    var email = formulario.get("email");
-    var senha = formulario.get("senha");
-
-    console.log("Email função entrar:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", email);
-    console.log("Senha:", senha);
-
-    if (email === "" || senha === "") {
-        mostrarErro("Preencha todos os campos para prosseguir!");
-        finalizarAguardar();
-        return;
-    }
-
-    if (!validarEmail(email)) {
-        mostrarErro("Ops, e-mail inválido! Verifique e tente novamente.");
-        finalizarAguardar();
-        return;
-    }
-
-    fetch("usuarios/autenticar", {
-        method: "POST",
-        body: formulario
-    }).then(function (resposta) {
-        if (resposta.ok) {
-            resposta.json().then(json => {
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id;
-
-                setTimeout(function () {
-                    window.location = "./dashboard.html";
-                }, 1000);
-            });
-        } else {
-            resposta.text().then(texto => {
-                console.error(texto);
-                finalizarAguardar();
-                mostrarErro("Houve um erro ao tentar realizar o login!");
-            });
-        }
-    }).catch(function (erro) {
-        console.log(erro);
-        finalizarAguardar();
-        mostrarErro("Erro de conexão. Tente novamente mais tarde.");
-    });
+    document.getElementById('div_aguardar').style.display = 'none';
 }

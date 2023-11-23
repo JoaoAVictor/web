@@ -1,4 +1,3 @@
-// controllers/comentarioController.js
 const Comentario = require('../models/comentarioModel');
 
 async function getComentarios(req, res) {

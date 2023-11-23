@@ -9,6 +9,34 @@
         <link rel="stylesheet" href="css/detalhes.css">
     </head>
 <body>
+    <div class="header">
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+        <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div class="spinner diagonal part-1"></div>
+            <div class="spinner horizontal"></div>
+            <div class="spinner diagonal part-2"></div>
+        </label>
+        <div id="sidebarMenu">
+            <ul class="sidebarMenuInner">
+                <li>
+                    <div>
+                        <a>
+                            <img src="./assets/img/Logo.png" alt="main-logo" class="logo" />
+                        </a>
+                    </div>
+                </li>
+                <li><a href="/dashboard">Home</b></li>
+                    <li><a style="color:rgb(136, 136, 136)">Comunidade</a></li>
+                    <li><a href="/jogos">Jogos</a></li>
+                    <li><a id="sairBtn" >sair</a></li>
+            </ul>
+        </div>
+        <div id='center' class="main center">
+            <div class="centralizar">
+                <!-- Conteúdo Central -->
+            </div>
+        </div>
+    </div>
     <div class="detalhes-container">
         <div id="detalhes-banner" class="detalhes-banner"></div> <!-- Adicione esta linha -->
         <h2 id="detalhes-titulo" style="color: red;"></h2>
@@ -24,5 +52,6 @@
         </div>
     </div>
     <script type="module" src="./assets/js/detalhes.js"></script>
+    <script src="./assets/js/funcoes.js" defer></script>
 </body>
 </html>

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPGMatch - Home</title>
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <body>
@@ -18,24 +19,52 @@
         </label>
         <div id="sidebarMenu">
             <ul class="sidebarMenuInner">
-                <li> 
+                <li>
                     <div>
-                        <a href="index.html">
+                        <a>
                             <img src="./assets/img/Logo.png" alt="main-logo" class="logo" />
                         </a>
                     </div>
                 </li>
-                <li><b style="color:rgb(136, 136, 136)">Home</b></li>
-                <li><a href="comunidade.html">Comunidade</a></li>
-                <li><a href="jogos">Jogos</a></li>
-                <li><a href="index.html">Sair</a></li>
+                <li><a href="/dashboard">Home</b></li>
+                    <li><a style="color:rgb(136, 136, 136)">Comunidade</a></li>
+                    <li><a href="/jogos">Jogos</a></li>
+                    <li><a id="sairBtn" >sair</a></li>
             </ul>
         </div>
-        <div id='center' class="main center">
-            <div class="centralizar">
-                <!-- Conteúdo Central -->
+        <div class="form-container">
+            <div id='center' class="main center">
+              <div class="centralizar">
+                <h1>Olá <span id="nomeUsuario"></span>, que tal fazer uma postagem?</h1>
+          
+                <form id="form_postagem">
+                  <label for="titulo">Título:</label>
+                  <input type="text" id="titulo" name="titulo" required>
+                  <br>
+                  <label for="descricao">Descrição:</label>
+                  <textarea id="descricao" name="descricao" rows="4" required></textarea>
+                  <br>
+                  <label for="post">Post:</label>
+                  <textarea id="post" name="post" rows="8" required></textarea>
+                  <br>
+                  <label for="imagem1">Imagem 1:</label>
+                  <input type="text" id="imagem1" name="imagem1">
+                  <br>
+                  <label for="banner">Banner:</label>
+                  <input type="text" id="banner" name="banner">
+                  <br>
+                  <button type="submit">Criar Postagem</button>
+                </form>
+              </div>
             </div>
-        </div>
+          </div>
+          
     </div>
+    <script src="./assets/js/funcoes.js" defer></script>
+    <script src="./assets/js/postagem.js"></script>
+    <script>
+        var nomeUsuario = sessionStorage.getItem('NOME_USUARIO');
+        document.getElementById('nomeUsuario').innerText = nomeUsuario;
+    </script>
 </body>
 </html>

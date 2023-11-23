@@ -1,4 +1,3 @@
-// controllers/usuarioController.js
 const Usuario = require('../models/usuarioModel');
 
 async function getUsuarios(req, res) {
@@ -14,7 +13,7 @@ async function getUsuarios(req, res) {
 
 async function autenticarUsuario(req, res) {
     const { email, senha } = req.body;
-    console.log("Emailbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:", email);
+    console.log("Email:", email);
     console.log("Senha:", senha);
     try {
       const usuario = await Usuario.findOne({ where: { email, senha } });
@@ -34,7 +33,7 @@ async function autenticarUsuario(req, res) {
     }
 }
 
-async function criarUsuario(req, res) {
+async function cadastrarUsuario(req, res) {
   try {
     const { nome, email, senha } = req.body;
     const usuario = await Usuario.create({ nome, email, senha });
@@ -96,7 +95,7 @@ async function excluirUsuario(req, res) {
 
 module.exports = {
   getUsuarios,
-  criarUsuario,
+  cadastrarUsuario,
   getUsuarioPorId,
   atualizarUsuario,
   excluirUsuario,

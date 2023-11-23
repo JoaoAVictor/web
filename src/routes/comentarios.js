@@ -1,4 +1,3 @@
-// routes/comentarioRoutes.js
 const express = require('express');
 const comentarioController = require('../controllers/comentarioController');
 

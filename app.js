@@ -1,4 +1,3 @@
-// app.js
 const express = require('express');
 const usuarioRoutes = require('./src/routes/usuarios');
 const postagemRoutes = require('./src/routes/postagens');
@@ -41,7 +40,6 @@ app.use('/api', usuarioRoutes);
 app.use('/api', postagemRoutes);
 app.use('/api', comentarioRoutes);
 
-// Sincronizar os modelos com o banco de dados
 sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
